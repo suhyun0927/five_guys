@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\user\Desktop\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
+C:\Users\user\Desktop\test\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
 WpfApp
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\user\Desktop\five_guys\App\WpfApp\App.xaml
-11407045341
+C:\Users\user\Desktop\test\five_guys\App\WpfApp\App.xaml
+61233551483
 
-7846698349
+12-1636306726
 1981839832580
-MainWindow.xaml;
+BreakPage.xaml;EnginePage.xaml;MainWindow.xaml;SteerPage.xaml;TestPage.xaml;TypePage.xaml;
 
 False
 
