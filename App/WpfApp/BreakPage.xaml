@@ -8,7 +8,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BreakPage">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="BreakButtonContainer" Margin="40">
+                <TextBlock x:Name="TitleTextBlock"
+                           FontSize="24" FontWeight="Bold"
+                           Margin="0 0 0 20"/>
+                <!-- 여기에 버튼이 동적으로 들어갈 예정 -->
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
