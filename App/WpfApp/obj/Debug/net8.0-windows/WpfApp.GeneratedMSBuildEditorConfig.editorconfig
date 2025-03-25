@@ -8,7 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WpfApp
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\user\Desktop\test\five_guys\App\WpfApp\
+=======
+build_property.ProjectDir = C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\
+>>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

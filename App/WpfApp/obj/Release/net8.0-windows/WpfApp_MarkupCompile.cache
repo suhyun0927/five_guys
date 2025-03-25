@@ -4,13 +4,18 @@
 winexe
 C#
 .cs
-C:\Users\user\Desktop\five_guys\App\WpfApp\obj\Release\net8.0-windows\
+C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\obj\Release\net8.0-windows\
 WpfApp
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\user\Desktop\five_guys\App\WpfApp\App.xaml
 61233551483
+=======
+C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\App.xaml
+11407045341
+>>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
 
 10-330188290
 1981839832580
