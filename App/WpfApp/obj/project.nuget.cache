@@ -1,20 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-<<<<<<< HEAD
   "dgSpecHash": "/iagR14GXB4=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\WpfApp.csproj",
-=======
-  "dgSpecHash": "nSjZVXzwfV0=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\WpfApp.csproj",
->>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
-=======
-  "dgSpecHash": "SiZGw+3GGuE=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\WpfApp.csproj",
->>>>>>> front
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "캐시 파일 C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\obj\\project.nuget.cache을(를) 읽는 동안 문제가 발생했습니다. Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

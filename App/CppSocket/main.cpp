@@ -7,20 +7,6 @@ using namespace std;
 const int PORT = 12345;
 const int BUFFER_SIZE = 1024;
 
-class Car {
-
-
-    int type;
-    int steer;
-    int engine;
-
-
-    void test()
-    {
-    };
-
-};
-
 int main()
 {
     try
@@ -43,7 +29,7 @@ int main()
             buffer[len] = '\0';  // null-terminate the received data
             
             // SUV를 입력 받았을 대
-            // return Car::test()
+            
 
 
             cout << "수신한 메시지: " << buffer << endl;

@@ -4,34 +4,15 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\user\Desktop\test\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
-=======
-C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
->>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
-=======
-C:\Users\user\Desktop\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
->>>>>>> front
 WpfApp
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\user\Desktop\test\five_guys\App\WpfApp\App.xaml
-=======
-C:\Users\user\Desktop\five_guys\App\WpfApp\App.xaml
->>>>>>> front
 61233551483
 
 12-1636306726
-=======
-C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\App.xaml
-11407045341
-
-61319175012
->>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
 1981839832580
 BreakPage.xaml;EnginePage.xaml;MainWindow.xaml;SteerPage.xaml;TestPage.xaml;TypePage.xaml;
 

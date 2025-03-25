@@ -14,27 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\WpfApp.csproj",
-=======
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\WpfApp.csproj",
->>>>>>> front
       "projectName": "WpfApp",
-      "projectPath": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\WpfApp.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\WpfApp.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-<<<<<<< HEAD
       "outputPath": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\WpfApp.csproj",
-      "projectName": "WpfApp",
-      "projectPath": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\WpfApp.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\obj\\",
->>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
-=======
-      "outputPath": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\obj\\",
->>>>>>> front
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -94,5 +78,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "캐시 파일 C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\obj\\project.nuget.cache을(를) 읽는 동안 문제가 발생했습니다. Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
