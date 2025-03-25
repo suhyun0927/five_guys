@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "/iagR14GXB4=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\WpfApp.csproj",
@@ -9,6 +10,11 @@
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\WpfApp.csproj",
 >>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
+=======
+  "dgSpecHash": "SiZGw+3GGuE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\WpfApp.csproj",
+>>>>>>> front
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace WpfApp
 {
@@ -14,13 +15,13 @@ namespace WpfApp
             _carType = carType;
 
             Loaded += EnginePage_Loaded;
+            Unloaded += EnginePage_Unloaded; // 이벤트 해제
         }
-
+        
         private void EnginePage_Loaded(object sender, RoutedEventArgs e)
         {
             TitleTextBlock.Text = $"{_carType}용 엔진 선택";
 
-            // 더미 데이터: 차량 타입에 따라 다른 엔진들
             var dummyEngineMap = new Dictionary<string, List<string>>
             {
                 { "SUV", new List<string> { "GM", "TOYOTA", "WIA" } },
@@ -48,6 +49,30 @@ namespace WpfApp
                 };
 
                 EngineButtonContainer.Children.Add(button);
+            }
+
+            // 🔹 뒤로 가기 이벤트 추가
+            if (NavigationService != null)
+            {
+                NavigationService.Navigating += NavigationService_Navigating;
+            }
+        }
+
+        // 🔹 뒤로 가기 이벤트 핸들러
+        private void NavigationService_Navigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                // 소켓으로 0 전달
+            }
+        }
+
+        // 🔹 페이지 언로드 시 이벤트 해제
+        private void EnginePage_Unloaded(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService != null)
+            {
+                NavigationService.Navigating -= NavigationService_Navigating;
             }
         }
     }

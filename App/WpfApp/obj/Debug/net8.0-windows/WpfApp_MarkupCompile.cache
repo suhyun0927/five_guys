@@ -5,16 +5,24 @@ winexe
 C#
 .cs
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\user\Desktop\test\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
 =======
 C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
 >>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
+=======
+C:\Users\user\Desktop\five_guys\App\WpfApp\obj\Debug\net8.0-windows\
+>>>>>>> front
 WpfApp
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\user\Desktop\test\five_guys\App\WpfApp\App.xaml
+=======
+C:\Users\user\Desktop\five_guys\App\WpfApp\App.xaml
+>>>>>>> front
 61233551483
 
 10-841437988

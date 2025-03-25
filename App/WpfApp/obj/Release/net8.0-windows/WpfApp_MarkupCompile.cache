@@ -4,13 +4,21 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\obj\Release\net8.0-windows\
+=======
+C:\Users\user\Desktop\five_guys - 복사본\App\WpfApp\obj\Release\net8.0-windows\
+>>>>>>> front
 WpfApp
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\user\Desktop\five_guys\App\WpfApp\App.xaml
+=======
+C:\Users\user\Desktop\five_guys - 복사본\App\WpfApp\App.xaml
+>>>>>>> front
 61233551483
 =======
 C:\Users\user\Desktop\project0325\five_guys\App\WpfApp\App.xaml

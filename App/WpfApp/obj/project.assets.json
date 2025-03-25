@@ -15,10 +15,15 @@
     "version": "1.0.0",
     "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\WpfApp.csproj",
+=======
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\WpfApp.csproj",
+>>>>>>> front
       "projectName": "WpfApp",
-      "projectPath": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\WpfApp.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\WpfApp.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+<<<<<<< HEAD
       "outputPath": "C:\\Users\\user\\Desktop\\test\\five_guys\\App\\WpfApp\\obj\\",
 =======
       "projectUniqueName": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\WpfApp.csproj",
@@ -27,6 +32,9 @@
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\Desktop\\project0325\\five_guys\\App\\WpfApp\\obj\\",
 >>>>>>> b893df99c40415f2ec2fc0b58b8f2788cb07eaf7
+=======
+      "outputPath": "C:\\Users\\user\\Desktop\\five_guys\\App\\WpfApp\\obj\\",
+>>>>>>> front
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
