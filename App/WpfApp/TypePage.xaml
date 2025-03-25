@@ -8,7 +8,15 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TypePage">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ButtonContainer" Margin="40">
+                <TextBlock Text="차량 타입을 선택하세요" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           Margin="0 0 0 20"/>
+                <!-- 버튼들이 코드에서 여기에 동적으로 추가됨 -->
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

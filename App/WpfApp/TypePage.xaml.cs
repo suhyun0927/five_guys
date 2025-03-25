@@ -13,16 +13,47 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Collections.Generic;
+
+
 namespace WpfApp
 {
-    /// <summary>
-    /// TypePage.xaml에 대한 상호 작용 논리
-    /// </summary>
     public partial class TypePage : Page
     {
         public TypePage()
         {
             InitializeComponent();
+            GenerateDummyButtons();
         }
+
+        private void GenerateDummyButtons()
+        {
+            List<string> carTypes = new List<string> { "SUV", "Sedan", "Truck" };
+
+            foreach (var type in carTypes)
+            {
+                var button = new Button
+                {
+                    Content = type,
+                    Height = 50,
+                    Margin = new Thickness(0, 0, 0, 15),
+                    FontSize = 18,
+                    Tag = type // 혹시 다음 페이지로 넘길 때 쓸 수 있음
+                };
+
+                button.Click += CarTypeButton_Click;
+                ButtonContainer.Children.Add(button);
+            }
+        }
+
+        private void CarTypeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.Tag is string carType)
+            {
+                // EnginePage로 carType 넘기면서 이동
+                NavigationService?.Navigate(new EnginePage(carType));
+            }
+        }
+
     }
 }
