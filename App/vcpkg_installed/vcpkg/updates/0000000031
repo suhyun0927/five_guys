@@ -1,0 +1,8 @@
+Package: boost-type-traits
+Version: 1.87.0
+Depends: boost-cmake, boost-config, boost-headers, boost-static-assert
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9a0f383ea8f05dadc1506cb928fc9dc10a9472f992ba99dde9d4a1e5992048a9
+Description: Boost type_traits module
+Status: install ok installed

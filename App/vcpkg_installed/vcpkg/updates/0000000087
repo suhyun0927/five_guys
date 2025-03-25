@@ -1,0 +1,8 @@
+Package: boost-intrusive
+Version: 1.87.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-move
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4677b58c5b7d2f4de29ab67d7714f4b12bd5bbb67e1b780d413d421352e77806
+Description: Boost intrusive module
+Status: install ok installed
