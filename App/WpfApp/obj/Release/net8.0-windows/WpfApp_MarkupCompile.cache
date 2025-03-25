@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 C:\Users\user\Desktop\five_guys\App\WpfApp\App.xaml
-11407045341
+61233551483
 
-5-2142150511
+10-330188290
 1981839832580
-MainWindow.xaml;
+BreakPage.xaml;EnginePage.xaml;MainWindow.xaml;SteerPage.xaml;TestPage.xaml;TypePage.xaml;
 
 True
 
