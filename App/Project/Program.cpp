@@ -1,61 +1,55 @@
+ï»¿// Program.cpp (Fixed: Shell í™”ë©´ë„ GUI ì…ë ¥ì— ë§ê²Œ ê°±ì‹ )
 #include "Program.h"
 #include "InputValidator.h"
 #include "StepHandler.h"
 #include "UI.h"
 #include <iostream>
 #include <algorithm>
+#include <thread>
 
 using namespace std;
 
 void Program::run() {
     Udp receiver;
     StepHandler stepHandler;
-    std::string input;
 
-    while (true) {
-        UI::showPrompt(step);
-        input = receiver.receive();
+    auto handleInput = [&](const std::string& input, Udp& receiver) {
+        std::string trimmed = input;
+        trimmed.erase(remove_if(trimmed.begin(), trimmed.end(), ::isspace), trimmed.end());
 
-        input.erase(remove_if(input.begin(), input.end(), ::isspace), input.end());
-
-        if (input == "exit") {
+        if (trimmed == "exit") {
             UI::showExitMessage();
-            break;
+            exit(0);
         }
 
         int answer;
         try {
-            answer = stoi(input);
+            answer = stoi(trimmed);
             cout << answer;
         }
         catch (...) {
-            UI::showError("¼ıÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+            UI::showError("ìˆ«ìë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
             UI::delay(800);
-            continue;
-        }
-        if (answer == 0 && step != QuestionType::Run_Test) {
-            step = static_cast<QuestionType>(static_cast<int>(step) - 1);
-            UI::delay(800);
-            continue;
+            return;
         }
 
         if (!InputValidator::validate(step, answer)) {
-            UI::showError("ÀÔ·Â°ªÀÌ À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.");
+            UI::showError("ì…ë ¥ê°’ì´ ìœ íš¨í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
             UI::delay(800);
-            continue;
+            return;
         }
 
         if (step == QuestionType::Run_Test) {
             if (answer == 0) {
                 step = QuestionType::CarType_Q;
-                continue;
+                return;
             }
 
             auto* car = builder.getCar();
             if (!car) {
-                UI::showError("Â÷·®ÀÌ ¾ÆÁ÷ »ı¼ºµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+                UI::showError("ì°¨ëŸ‰ì´ ì•„ì§ ìƒì„±ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
                 UI::delay(800);
-                continue;
+                return;
             }
 
             car->setUdp(&receiver);
@@ -69,5 +63,24 @@ void Program::run() {
         }
 
         UI::delay(800);
+        };
+
+    // Thread: GUI ì…ë ¥ (UDP) ì²˜ë¦¬
+    std::thread udpThread([&]() {
+        while (true) {
+            std::string input = receiver.receive();
+            handleInput(input, receiver);
+            UI::showPrompt(step); // âœ… GUI ì…ë ¥ ì²˜ë¦¬ í›„ ì½˜ì†” ë©”ë‰´ ê°±ì‹ 
+        }
+        });
+
+    // Main thread: Shell ì…ë ¥
+    while (true) {
+        UI::showPrompt(step);
+        std::string input;
+        getline(std::cin, input);
+        handleInput(input, receiver);
     }
+
+    udpThread.join();
 }
