@@ -23,6 +23,4 @@ public:
     void setBrake(BreakSystem b);
     void setSteering(SteeringSystem s);
     void handleStep(QuestionType step, int answer);
-    void run();
-    void test();
 };

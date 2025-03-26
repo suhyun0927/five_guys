@@ -73,8 +73,8 @@ void Program::run() {
         UI::delay(800);
 
         if (step == QuestionType::Run_Test) {
-            if (answer == 1) builder.run();
-            else if (answer == 2) builder.test();
+            if (answer == 1) builder.getCar()->run();
+            else if (answer == 2) builder.getCar()->test();
         }
         else {
             step = static_cast<QuestionType>(static_cast<int>(step) + 1);
