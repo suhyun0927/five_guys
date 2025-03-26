@@ -58,62 +58,34 @@ void UI::animateCarRun() {
     const string wheels[] = { "(@)", "(|)", "(-)", "(\\)", "(@)" };
     const int wheelFrames = sizeof(wheels) / sizeof(wheels[0]);
 
-    for (int offset = 0; offset <= maxOffset; ++offset) {
+    for (int offset = 0; offset <= maxOffset; offset+=3) {
         clearScreen();
+        cout << "자동차가 동작됩니다.\n";
         string space(offset, ' ');
         for (const auto& line : bodyTop) {
             cout << space << line << '\n';
         }
         string wheelFrame = wheels[offset % wheelFrames];
         cout << space << " '-" << wheelFrame << "----------------" << wheelFrame << "--'\n";
-        cout << space << "===============================\n";
-        delay(100);
+        cout << "========================================================================\n";
+        delay(200);
     }
-    cout << "\n자동차가 멀리 달려갔습니다!\n";
 }
 
 void UI::animateCarBroken() {
-    const string frames[][6] = {
-        {
+    const string frames[6] = {
             "        ______________",
             "       /|   SYSTEM   | ",
             "  ____/_|___FAILURE__|____",
             " |        O       O      |",
             " '-(@)------------(@)----'",
             "==============================="
-        },
-        {
-            "       ______________",
-            "      /|   SYSTEM   | ",
-            " ____/_|___FAILURE__|____",
-            "|      O       O        |",
-            "'-(@)------------(@)----'",
-            "==============================="
-        },
-        {
-            "       ______________",
-            "      /|   SYSTEM   | ",
-            " ____/_|___FAILURE__|____",
-            "|      O       O        |",
-            "'-( )------------(@)----'",
-            "   * 바퀴가 빠졌습니다!"
-        },
-        {
-            "     ______________",
-            "    /|   SYSTEM   | ",
-            " __/_|___FAILURE__|____",
-            "|   O       O         |",
-            "'-( )----------( )-----'",
-            "   연기 발생 중..."
-        }
     };
 
-    for (const auto& frame : frames) {
-        clearScreen();
-        for (const auto& line : frame) {
-            cout << line << '\n';
-        }
-        delay(400);
+    clearScreen();
+    cout << "엔진이 고장났습니다. 자동차가 움직이지 않습니다.\n";
+    for (const auto& line : frames) {
+        cout << line << '\n';
     }
-    cout << "\n자동차가 고장났습니다. 수리가 필요합니다.\n";
+    delay(1500);
 }

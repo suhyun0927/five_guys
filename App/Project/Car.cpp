@@ -9,9 +9,13 @@ bool Car::checkBoschCompatibility() const {
 }
 
 void Car::fail(const std::string& reason) const {
-    cout << "자동차 테스트 결과: FAIL\n" << reason << endl;
+    cout << "\n===============================";
+    cout << "\n자동차 테스트 결과: FAIL\n" << reason << endl;
+    UI::delay(1500);
 }
 
 void Car::pass() const {
-    cout << "자동차 테스트 결과: PASS\n";
+    cout << "\n===============================";
+    cout << "\n자동차 테스트 결과: PASS\n";
+    UI::delay(1500);
 }
