@@ -4,6 +4,19 @@
       Title="TestPage">
 
     <Grid Background="White">
+        <Canvas x:Name="AnimationCanvas" Height="100" Margin="0,20,0,0">
+            <Image x:Name="CarImage"
+                   Width="200" Height="200"
+                   
+                   
+                   RenderTransformOrigin="0.5,0.5" Canvas.Left="5" Canvas.Top="50">
+                <Image.RenderTransform>
+                    <TranslateTransform x:Name="CarTransform" />
+                </Image.RenderTransform>
+            </Image>
+
+        </Canvas>
+        
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="ButtonContainer" Margin="40">
                 <TextBlock Text="동작을 선택하세요 (RUN / TEST)"
@@ -12,5 +25,6 @@
                            Margin="0 0 0 20"/>
             </StackPanel>
         </ScrollViewer>
+
     </Grid>
 </Page>

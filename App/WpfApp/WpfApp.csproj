@@ -8,4 +8,20 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\broken_car.png" />
+    <None Remove="Assets\car.jpg" />
+    <None Remove="car2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\broken_car.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\car.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="car2.jpg" />
+  </ItemGroup>
+
 </Project>
