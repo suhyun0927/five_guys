@@ -10,9 +10,15 @@ void Suv::setSteering(SteeringSystem s) { steering = s; }
 
 void Suv::run() const {
     if (engine == Engine::BROKEN) {
+        if (udpSender) {
+            udpSender->sendBack("fail|엔진이 고장났습니다. 자동차가 움직이지 않습니다.");
+        }
         UI::animateCarBroken();
     }
     else {
+        if (udpSender) {
+            udpSender->sendBack("pass|자동차가 동작됩니다.");
+        }
         UI::animateCarRun();
     }
 }
