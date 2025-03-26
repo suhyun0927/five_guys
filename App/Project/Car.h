@@ -1,5 +1,6 @@
 #pragma once
 #include "Types.h"
+#include "UI.h"
 #include <string>
 
 class Car {

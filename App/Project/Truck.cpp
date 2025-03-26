@@ -10,11 +10,9 @@ void Truck::setSteering(SteeringSystem s) { steering = s; }
 
 void Truck::run() const {
     if (engine == Engine::BROKEN) {
-        cout << "엔진이 고장났습니다. 자동차가 움직이지 않습니다.\n";
         UI::animateCarBroken();
     }
     else {
-        cout << "자동차가 동작됩니다.\n";
         UI::animateCarRun();
     }
 }

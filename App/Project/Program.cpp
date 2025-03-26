@@ -13,12 +13,12 @@ void Program::run() {
         UI::showMenu(step);
         input = receiver.receive(); // UDP 메시지 수신
 
-        std::cout << "[DEBUG] 원본 수신 값: \"" << input << "\"\n";
+        //std::cout << "[DEBUG] 원본 수신 값: \"" << input << "\"\n";
 
         input.erase(std::remove_if(input.begin(), input.end(),
             [](unsigned char c) { return std::isspace(c); }), input.end());
 
-        std::cout << "[DEBUG] 공백 제거 후: \"" << input << "\"\n";
+        //std::cout << "[DEBUG] 공백 제거 후: \"" << input << "\"\n";
 
         if (input == "exit") {
             cout << "바이바이!\n";
