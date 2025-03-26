@@ -30,8 +30,10 @@ namespace WpfApp
                 var btn = new Button
                 {
                     Content = label,
-                    Height = 50,
+                    Height = 120,  // 버튼 높이를 늘려서 이미지와 텍스트가 잘 보이게 함
+                    Width = 200,
                     FontSize = 18,
+                    FontWeight = FontWeights.Bold,
                     Margin = new Thickness(0, 0, 0, 15),
                     Tag = value
                 };
@@ -87,6 +89,7 @@ namespace WpfApp
 
             Dispatcher.InvokeAsync(() =>
             {
+                CarImage.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/car.jpg"));
                 double middleX = (AnimationCanvas.ActualWidth - CarImage.Width) / 2;
 
                 var animation = new DoubleAnimation
