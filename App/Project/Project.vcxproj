@@ -139,7 +139,7 @@
     <ClCompile Include="Sedan.cpp" />
     <ClCompile Include="Suv.cpp" />
     <ClCompile Include="Truck.cpp" />
-    <ClCompile Include="UdpReceiver.cpp" />
+    <ClCompile Include="Udp.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +151,7 @@
     <ClInclude Include="Suv.h" />
     <ClInclude Include="Truck.h" />
     <ClInclude Include="Types.h" />
-    <ClInclude Include="UdpReceiver.h" />
+    <ClInclude Include="Udp.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,12 +1,12 @@
 #include "Program.h"
-#include "UdpReceiver.h"
+#include "Udp.h"
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
 
 void Program::run() {
-    UdpReceiver receiver;
+    Udp receiver;
     string input;
 
     while (true) {
@@ -73,6 +73,7 @@ void Program::run() {
         UI::delay(800);
 
         if (step == QuestionType::Run_Test) {
+            builder.getCar()->setUdp(&receiver);
             if (answer == 1) builder.getCar()->run();
             else if (answer == 2) builder.getCar()->test();
         }
