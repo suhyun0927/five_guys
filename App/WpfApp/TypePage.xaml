@@ -3,12 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="TypePage">
 
-    <Grid Background="White">
+    <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="ButtonContainer" Margin="40">
                 <TextBlock Text="차량 타입을 선택하세요"
+                           Foreground="White"
                            FontSize="24"
                            FontWeight="Bold"
+                           HorizontalAlignment="Center"
                            Margin="0 0 0 20"/>
             </StackPanel>
         </ScrollViewer>
