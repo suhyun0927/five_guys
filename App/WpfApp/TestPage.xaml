@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="TestPage">
 
-    <Grid Background="White">
+    <Grid>
         <Canvas x:Name="AnimationCanvas" Height="100" Margin="0,20,0,0">
             <Image x:Name="CarImage"
                    Width="200" Height="200"
@@ -20,6 +20,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="ButtonContainer" Margin="40">
                 <TextBlock Text="동작을 선택하세요 (RUN / TEST)"
+                           Foreground="White"
                            FontSize="24"
                            FontWeight="Bold"
                            HorizontalAlignment="Center"

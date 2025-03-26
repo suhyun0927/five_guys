@@ -34,6 +34,7 @@ namespace WpfApp
                     Width = 200,
                     FontSize = 18,
                     FontWeight = FontWeights.Bold,
+                    Background = Brushes.White,
                     Margin = new Thickness(0, 0, 0, 15),
                     Tag = value
                 };
@@ -59,7 +60,7 @@ namespace WpfApp
             Dispatcher.InvokeAsync(() =>
             {
                 // 1. 이미지 교체
-                CarImage.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/car.jpg"));
+                CarImage.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/car.png"));
 
                 // 2. 애니메이션 설정
                 double toX = AnimationCanvas.ActualWidth - CarImage.Width - 20;
@@ -89,7 +90,7 @@ namespace WpfApp
 
             Dispatcher.InvokeAsync(() =>
             {
-                CarImage.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/car.jpg"));
+                CarImage.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/car.png"));
                 double middleX = (AnimationCanvas.ActualWidth - CarImage.Width) / 2;
 
                 var animation = new DoubleAnimation
