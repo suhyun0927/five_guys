@@ -38,6 +38,21 @@ void Program::run() {
             UI::delay(800);
             return;
         }
+        
+        if (answer == 0) {
+            if (step == QuestionType::Engine_Q) {
+                step = QuestionType::CarType_Q;
+                return;
+            }
+            else if (step == QuestionType::BreakSystem_Q) {
+                step = QuestionType::Engine_Q;
+                return;
+            }
+            else if (step == QuestionType::SteeringSystem_Q) {
+                step = QuestionType::BreakSystem_Q;
+                return;
+            }
+        }
 
         if (step == QuestionType::Run_Test) {
             if (answer == 0) {
