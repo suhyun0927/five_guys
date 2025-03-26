@@ -45,6 +45,9 @@
     <ClCompile Include="Udp.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="StepHandler.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h">
@@ -75,6 +78,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Udp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="StepHandler.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

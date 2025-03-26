@@ -32,6 +32,10 @@ void Udp::sendTo(const std::string& message, const std::string& ip, unsigned sho
     }
 }
 
+void Udp::sendBack(const std::string& message) {
+    sendTo(message, getLastSenderIP(), getLastSenderPort());
+}
+
 std::string Udp::getLastSenderIP() const {
     return lastSenderEndpoint.address().to_string();
 }

@@ -4,23 +4,16 @@
 #include "Suv.h"
 #include "Truck.h"
 #include "Types.h"
+#include <memory>
 
 class CarBuilder {
 private:
-    Car* car = nullptr;
-
-    CarType selectedType = CarType::NONE;
-    Engine engine = Engine::NONE;
-    BreakSystem brake = BreakSystem::NONE;
-    SteeringSystem steering = SteeringSystem::NONE;
+    std::unique_ptr<Car> car;
 
 public:
-    ~CarBuilder();
-
     void createCar(CarType type);
     Car* getCar() const;
     void setEngine(Engine e);
     void setBrake(BreakSystem b);
     void setSteering(SteeringSystem s);
-    void handleStep(QuestionType step, int answer);
 };
