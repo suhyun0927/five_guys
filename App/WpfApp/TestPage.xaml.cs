@@ -6,6 +6,7 @@ using System.Windows.Media;
 using System.Reflection.Emit;
 using System.Windows.Threading;
 using System.Windows.Media.Imaging;
+using System.Text;
 
 namespace WpfApp
 {
@@ -39,14 +40,42 @@ namespace WpfApp
                     Tag = value
                 };
 
-                btn.Click += (s, e) =>
+                btn.Click += async (s, e) =>
                 {
                     UdpHelper.SendMessage((string)((Button)s).Tag);
-                    MessageBox.Show($"{label} 명령이 전송되었습니다.");
-                    
-                    if (value == "1") RunSuccessAnimation();     // RUN
-                    else if (value == "2") RunFailureAnimation(); // TEST
-                    
+
+                    int euckrCodePage = 51949;
+                    Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // 등록 (1회만)
+                    Encoding euckr = Encoding.GetEncoding(euckrCodePage);
+
+                    // 2. 서버 응답 수신
+                    var client = UdpHelper.Client; // 공유 UdpClient
+                    var result = await client.ReceiveAsync();
+                    string response = euckr.GetString(result.Buffer);
+                    //MessageBox.Show(response);
+
+                    // 3. 응답 파싱 및 출력
+                    var parts = response.Split('|');
+
+                    var passOrFail = parts[0];
+                    var message = parts[1];
+
+                    if (passOrFail == "pass")
+                    {
+                        RunSuccessAnimation(message);
+                    }
+                    else if(passOrFail == "fail")
+                    {
+                        RunFailureAnimation(message);
+                    }
+                    else
+                    {
+                        RunSuccessAnimation(message);
+
+                    }
+                    //if (value == "1") RunSuccessAnimation();     // RUN
+                    //else if (value == "2") RunFailureAnimation(); // TEST
+
                 };
 
                 ButtonContainer.Children.Add(btn);
@@ -54,7 +83,7 @@ namespace WpfApp
         }
 
 
-        private void RunSuccessAnimation()
+        private void RunSuccessAnimation(string message)
         {
 
             Dispatcher.InvokeAsync(() =>
@@ -76,7 +105,7 @@ namespace WpfApp
                 // 3. 애니메이션 완료 후 메시지박스
                 animation.Completed += (s, e) =>
                 {
-                    MessageBox.Show("자동차가 동작됩니다.");
+                    MessageBox.Show(message);
                 };
                 CarTransform.BeginAnimation(TranslateTransform.XProperty, animation);
                 
@@ -84,7 +113,7 @@ namespace WpfApp
         }
 
 
-        private void RunFailureAnimation()
+        private void RunFailureAnimation(string message)
         {
 
 
@@ -105,7 +134,7 @@ namespace WpfApp
                 animation.Completed += (s, e) =>
                 {
                     CarImage.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/broken_car.png"));
-                    MessageBox.Show("엔진이 고장났습니다. 자동차가 움직이지 않습니다.");
+                    MessageBox.Show(message);
                 };
 
                 CarTransform.BeginAnimation(TranslateTransform.XProperty, animation);
