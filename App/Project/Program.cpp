@@ -33,6 +33,11 @@ void Program::run() {
             UI::delay(800);
             continue;
         }
+        if (answer == 0 && step != QuestionType::Run_Test) {
+            step = static_cast<QuestionType>(static_cast<int>(step) - 1);
+            UI::delay(800);
+            continue;
+        }
 
         if (!InputValidator::validate(step, answer)) {
             UI::showError("입력값이 유효하지 않습니다.");

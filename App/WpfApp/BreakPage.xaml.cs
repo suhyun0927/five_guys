@@ -77,6 +77,26 @@ namespace WpfApp
 
                 ButtonContainer.Children.Add(btn);
             }
+            // "뒤로가기" 버튼 추가
+            var backButton = new Button
+            {
+                Height = 40,  // 크기 조정
+                Width = 100,
+                Margin = new Thickness(0, 5, 0, 0), // 상단 여백 추가
+                FontSize = 18,
+                Background = Brushes.LightGray,
+                Content = "뒤로가기",
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
+
+            backButton.Click += (s, e) =>
+            {
+                UdpHelper.SendMessage("0"); // UDP 메시지 전송
+                NavigationService?.GoBack(); // 이전 페이지로 이동
+            };
+
+            ButtonContainer.Children.Add(backButton);
         }
     }
 }
