@@ -1,5 +1,7 @@
 #include "Program.h"
-#include "Udp.h"
+#include "InputValidator.h"
+#include "StepHandler.h"
+#include "UI.h"
 #include <iostream>
 #include <algorithm>
 
@@ -7,21 +9,17 @@ using namespace std;
 
 void Program::run() {
     Udp receiver;
-    string input;
+    StepHandler stepHandler;
+    std::string input;
 
     while (true) {
-        UI::showMenu(step);
-        input = receiver.receive(); // UDP 메시지 수신
+        UI::showPrompt(step);
+        input = receiver.receive();
 
-        //std::cout << "[DEBUG] 원본 수신 값: \"" << input << "\"\n";
-
-        input.erase(std::remove_if(input.begin(), input.end(),
-            [](unsigned char c) { return std::isspace(c); }), input.end());
-
-        //std::cout << "[DEBUG] 공백 제거 후: \"" << input << "\"\n";
+        input.erase(remove_if(input.begin(), input.end(), ::isspace), input.end());
 
         if (input == "exit") {
-            cout << "바이바이!\n";
+            UI::showExitMessage();
             break;
         }
 
@@ -31,54 +29,40 @@ void Program::run() {
             cout << answer;
         }
         catch (...) {
-
-            cout << "ERROR :: 숫자만 입력해주세요.\n";
+            UI::showError("숫자만 입력해주세요.");
             UI::delay(800);
             continue;
         }
 
-        // 입력값 범위 체크
-        if (step == QuestionType::CarType_Q && (answer < 1 || answer > 3)) {
-            cout << "ERROR :: 차량 타입은 1 ~ 3 범위만 선택 가능\n";
+        if (!InputValidator::validate(step, answer)) {
+            UI::showError("입력값이 유효하지 않습니다.");
             UI::delay(800);
             continue;
         }
-        if (step == QuestionType::Engine_Q && (answer < 0 || answer > 4)) {
-            cout << "ERROR :: 엔진은 0 ~ 4 범위만 선택 가능\n";
-            UI::delay(800);
-            continue;
-        }
-        if (step == QuestionType::BreakSystem_Q && (answer < 0 || answer > 3)) {
-            cout << "ERROR :: 제동장치는 0 ~ 3 범위만 선택 가능\n";
-            UI::delay(800);
-            continue;
-        }
-        if (step == QuestionType::SteeringSystem_Q && (answer < 0 || answer > 2)) {
-            cout << "ERROR :: 조향장치는 0 ~ 2 범위만 선택 가능\n";
-            UI::delay(800);
-            continue;
-        }
-        if (step == QuestionType::Run_Test && (answer < 0 || answer > 2)) {
-            cout << "ERROR :: 동작 선택은 0 ~ 2 사이여야 합니다\n";
-            UI::delay(800);
-            continue;
-        }
-
-        if (step == QuestionType::Run_Test && answer == 0) {
-            step = QuestionType::CarType_Q;
-            continue;
-        }
-
-        builder.handleStep(step, answer);
-        UI::delay(800);
 
         if (step == QuestionType::Run_Test) {
-            builder.getCar()->setUdp(&receiver);
-            if (answer == 1) builder.getCar()->run();
-            else if (answer == 2) builder.getCar()->test();
+            if (answer == 0) {
+                step = QuestionType::CarType_Q;
+                continue;
+            }
+
+            auto* car = builder.getCar();
+            if (!car) {
+                UI::showError("차량이 아직 생성되지 않았습니다.");
+                UI::delay(800);
+                continue;
+            }
+
+            car->setUdp(&receiver);
+
+            if (answer == 1) car->run();
+            else if (answer == 2) car->test();
         }
         else {
+            stepHandler.handleStep(step, answer, builder);
             step = static_cast<QuestionType>(static_cast<int>(step) + 1);
         }
+
+        UI::delay(800);
     }
 }
